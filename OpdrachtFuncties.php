@@ -13,19 +13,17 @@ $Celsius = $_GET["T(°C)"];
 $fahrenheit = $_GET["T(°F)"];
 $kelvin = $_GET["(°CK)"];
 $kelvinToCel = $_GET["T(K)"];
-#$tempC = $fahrenheit - 32/1.8;
-#$tempF = $Celsius * 1.8 + 32;
-#$tempKC = $kelvinToCel - 273.15;
-#$tempK = $kelvin + 273.15;
+$stringNotTurnedAround = $_GET["srb"];
 $dividenumber = $_GET["dbdd"];
 
-#$yesno = $dividenumber / 3;
 function globalcalc(){
     $GLOBALS["tempC"] = $GLOBALS["fahrenheit"] - 32/1.8;
     $GLOBALS["tempF"] = $GLOBALS["Celsius"] * 1.8 + 32;
     $GLOBALS["tempKC"] = $GLOBALS["kelvinToCel"] - 273.15;
     $GLOBALS["tempK"] = $GLOBALS["kelvin"] + 273.15;
     $GLOBALS["yesno"] = $GLOBALS["dividenumber"] /3;
+    $GLOBALS["stringTurnedAround"] = $GLOBALS["stringNotTurnedAround"];
+
 }
 globalcalc();
 $truefalse;
@@ -67,6 +65,16 @@ function websiteBottom(){
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                 <h2 class="koptekst">Results Dividable or not.</h2>
                 <p class="h3"><?php echo "Your number was: ".$dividenumber." ".$divadeablebythree; ?></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div name="Result Backwards Text">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <h2 class="koptekst">Your text backwards</h2>
+                <p class="h3"><?php echo strrev($stringTurnedAround); // outputs "of your string";?></p>
             </div>
         </div>
     </div>
